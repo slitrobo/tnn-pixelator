@@ -1,6 +1,6 @@
 # TNN Pixelator
 
-[](https://github.com/vladimirshlygin/tnn-pixelator/blob/master/sample.jpg)
+![](https://github.com/vladimirshlygin/tnn-pixelator/blob/master/sample.jpg)
 
 Small Jimp-based custom pixelization script for scan-me project.
 
@@ -13,3 +13,5 @@ Sample bash command:
 Require in your project:
 
 `var tnnPixelator = require('./tnnPixelator')`
+
+DIVS are number of picture divisions in x and y axis. Two divisions means two pixels, eight divisions means eight pixels, etc.
