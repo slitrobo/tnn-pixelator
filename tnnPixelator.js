@@ -10,29 +10,30 @@ module.exports = function (refName, saveName, divisions) {
 	    if (err) throw err;
 
 	    var pixels = ref.bitmap.data;
+	    console.log(refName+' is loaded');
 
-	    var divX = parseInt(ref.bitmap.width/divisions);
-	    var divY = parseInt(ref.bitmap.height/divisions);
+	    var divX = Math.floor(ref.bitmap.width/divisions);
+	    var divY = Math.floor(ref.bitmap.height/divisions);
 
 		var image = new Jimp(divX*divisions, divY*divisions, function (err,img) {
+
+			console.log('Rendering '+saveName+'...');
 
 			for (var dx = 0; dx < divisions; dx++) {
 				for (var dy = 0; dy < divisions; dy++) {
 
-					var cellColor = Jimp.intToRGBA(ref.getPixelColor(dx * divX, dy * divY));
+					var cellColor = Jimp.intToRGBA(ref.getPixelColor(dx * divX + divX/2, dy * divY + divY/2));
 					var nextCellColor;
 
-					if (((dy + 1) * divY) < img.bitmap.height) {
+					if (((dy + 1) * divY + divY/2) < img.bitmap.height) {
 
-						nextCellColor = Jimp.intToRGBA(ref.getPixelColor(dx * divX, (dy + 1) * divY));
+						nextCellColor = Jimp.intToRGBA(ref.getPixelColor(dx * divX + divX/2, (dy + 1) * divY));
 
 					} else {
 
 						nextCellColor = cellColor;
 
 					}
-					
-					console.log(nextCellColor);
 
 					for (var y = 0; y < divY; y++) {
 
