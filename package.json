@@ -1,0 +1,14 @@
+{
+  "name": "tnn-pixelator",
+  "version": "1.0.0",
+  "description": "Small script for scan-me project that takes an image and renders it with branded gradient pixelization effect",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Vladimir Shlygin",
+  "license": "MIT",
+  "dependencies": {
+    "jimp": "^0.2.28"
+  }
+}
