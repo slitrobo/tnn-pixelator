@@ -14,4 +14,4 @@ Require in your project:
 
 `var tnnPixelator = require('./tnnPixelator')`
 
-DIVS are number of picture divisions by x and y axis. Two divisions means two quads, eight divisions means eight quads, etc.
+DIVS are the number of picture divisions by x and y axis. Two divisions means two quads, eight divisions means eight quads, etc.
